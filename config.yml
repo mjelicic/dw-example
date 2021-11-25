@@ -1,0 +1,7 @@
+server:
+  rootPath: '/api/*'
+
+logging:
+  level: INFO
+  loggers:
+    miro: DEBUG
