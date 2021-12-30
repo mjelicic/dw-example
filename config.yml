@@ -1,5 +1,7 @@
 server:
   rootPath: '/api/*'
+health:
+  delayedShutdownHandlerEnabled: false
 
 logging:
   level: INFO

@@ -1,10 +1,22 @@
 package miro;
 
-import io.dropwizard.Configuration;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.hibernate.validator.constraints.*;
-import javax.validation.constraints.*;
+import io.dropwizard.Configuration;
+import io.dropwizard.health.conf.HealthConfiguration;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 public class ExampleConfiguration extends Configuration {
-    // TODO: implement service configuration
+  @Valid
+  @NotNull
+  @JsonProperty("health")
+  private HealthConfiguration healthConfiguration = new HealthConfiguration();
+
+  public HealthConfiguration getHealthConfiguration() {
+    return healthConfiguration;
+  }
+
+  public void setHealthConfiguration(final HealthConfiguration healthConfiguration) {
+    this.healthConfiguration = healthConfiguration;
+  }
 }
